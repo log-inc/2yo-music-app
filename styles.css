@@ -236,13 +236,14 @@ body {
     transform: translateY(2px);
 }
 
-.xylophone-bar.purple { background: linear-gradient(to bottom, #9B59B6, #8E44AD); }
-.xylophone-bar.pink { background: linear-gradient(to bottom, #E91E63, #C2185B); }
 .xylophone-bar.red { background: linear-gradient(to bottom, #FF6B6B, #E74C3C); }
 .xylophone-bar.orange { background: linear-gradient(to bottom, #FF8E53, #F39C12); }
 .xylophone-bar.yellow { background: linear-gradient(to bottom, #FFD93D, #F1C40F); }
 .xylophone-bar.green { background: linear-gradient(to bottom, #6BCF7F, #27AE60); }
 .xylophone-bar.blue { background: linear-gradient(to bottom, #4ECDC4, #3498DB); }
+.xylophone-bar.purple { background: linear-gradient(to bottom, #9B59B6, #8E44AD); }
+.xylophone-bar.pink { background: linear-gradient(to bottom, #E91E63, #C2185B); }
+.xylophone-bar.red2 { background: linear-gradient(to bottom, #FF4757, #FF3742); }
 
 /* タブナビゲーション */
 .instrument-tabs {
