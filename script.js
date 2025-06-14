@@ -25,6 +25,8 @@ class MusicApp {
     async preloadSounds() {
         const soundConfig = {
             'drum': { frequency: 80, type: 'sine', duration: 0.3 },
+            'piano-a': { frequency: 220.00, type: 'triangle', duration: 0.5 },
+            'piano-b': { frequency: 246.94, type: 'triangle', duration: 0.5 },
             'piano-c': { frequency: 261.63, type: 'triangle', duration: 0.5 },
             'piano-d': { frequency: 293.66, type: 'triangle', duration: 0.5 },
             'piano-e': { frequency: 329.63, type: 'triangle', duration: 0.5 },
@@ -32,6 +34,8 @@ class MusicApp {
             'piano-g': { frequency: 392.00, type: 'triangle', duration: 0.5 },
             'maracas': { frequency: 2000, type: 'sawtooth', duration: 0.2 },
             'triangle': { frequency: 800, type: 'sine', duration: 1.0 },
+            'xylo-a': { frequency: 440.00, type: 'square', duration: 0.6 },
+            'xylo-b': { frequency: 493.88, type: 'square', duration: 0.6 },
             'xylo-c': { frequency: 523.25, type: 'square', duration: 0.6 },
             'xylo-d': { frequency: 587.33, type: 'square', duration: 0.6 },
             'xylo-e': { frequency: 659.25, type: 'square', duration: 0.6 },
