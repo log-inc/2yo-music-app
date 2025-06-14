@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.instrument-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instrument {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.instrument.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.instrument-title {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 太鼓 */
+.drum-pad {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.drum-surface {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #8B4513 0%, #A0522D 50%, #654321 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease;
+}
+
+.drum-surface:active {
+    transform: scale(0.95);
+}
+
+/* ピアノ */
+.piano-keys {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.piano-key {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    border: 3px solid #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.piano-key:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* マラカス */
+.maracas-container {
+    display: flex;
+    justify-content: center;
+}
+
+.maraca {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+.maraca-body {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8B4513;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease;
+}
+
+.maraca-body::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background: #8B4513;
+    border-radius: 10px;
+}
+
+.maraca:active .maraca-body {
+    transform: rotate(15deg);
+}
+
+/* トライアングル */
+.triangle-shape {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.triangle-inner {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 173px solid #C0C0C0;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding-top: 60px;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+    transition: transform 0.1s ease;
+}
+
+.triangle-shape:active .triangle-inner {
+    transform: scale(0.95);
+}
+
+/* 木琴 */
+.xylophone-bars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.xylophone-bar {
+    width: 60px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.xylophone-bar:active {
+    transform: translateY(2px);
+}
+
+.xylophone-bar.red { background: linear-gradient(to bottom, #FF6B6B, #E74C3C); }
+.xylophone-bar.orange { background: linear-gradient(to bottom, #FF8E53, #F39C12); }
+.xylophone-bar.yellow { background: linear-gradient(to bottom, #FFD93D, #F1C40F); }
+.xylophone-bar.green { background: linear-gradient(to bottom, #6BCF7F, #27AE60); }
+.xylophone-bar.blue { background: linear-gradient(to bottom, #4ECDC4, #3498DB); }
+
+/* タブナビゲーション */
+.instrument-tabs {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tab-button.active {
+    background: #667eea;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .instrument-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .drum-surface {
+        width: 250px;
+        height: 250px;
+        font-size: 1.5rem;
+    }
+    
+    .piano-key {
+        width: 60px;
+        height: 100px;
+        font-size: 1rem;
+    }
+    
+    .xylophone-bar {
+        width: 50px;
+        height: 120px;
+    }
+}
+
+/* アニメーション効果 */
+.playing {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.glow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8) !important;
+}

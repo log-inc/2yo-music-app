@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楽器遊び - 2歳児向け音楽アプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>🎵 楽器で遊ぼう！</h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="instrument-container" id="instrumentContainer">
+                <!-- 太鼓 -->
+                <div class="instrument drum active" id="drum">
+                    <div class="instrument-title">🥁 太鼓</div>
+                    <div class="drum-pad" data-sound="drum">
+                        <div class="drum-surface">ドン！</div>
+                    </div>
+                </div>
+                
+                <!-- ピアノ -->
+                <div class="instrument piano" id="piano">
+                    <div class="instrument-title">🎹 ピアノ</div>
+                    <div class="piano-keys">
+                        <div class="piano-key" data-sound="piano-c" data-note="ド">ド</div>
+                        <div class="piano-key" data-sound="piano-d" data-note="レ">レ</div>
+                        <div class="piano-key" data-sound="piano-e" data-note="ミ">ミ</div>
+                        <div class="piano-key" data-sound="piano-f" data-note="ファ">ファ</div>
+                        <div class="piano-key" data-sound="piano-g" data-note="ソ">ソ</div>
+                    </div>
+                </div>
+                
+                <!-- マラカス -->
+                <div class="instrument maracas" id="maracas">
+                    <div class="instrument-title">🎵 マラカス</div>
+                    <div class="maracas-container">
+                        <div class="maraca" data-sound="maracas">
+                            <div class="maraca-body">シャカシャカ！</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- トライアングル -->
+                <div class="instrument triangle" id="triangle">
+                    <div class="instrument-title">🔺 トライアングル</div>
+                    <div class="triangle-shape" data-sound="triangle">
+                        <div class="triangle-inner">キーン！</div>
+                    </div>
+                </div>
+                
+                <!-- 木琴 -->
+                <div class="instrument xylophone" id="xylophone">
+                    <div class="instrument-title">🎼 木琴</div>
+                    <div class="xylophone-bars">
+                        <div class="xylophone-bar red" data-sound="xylo-c" data-note="ド">ド</div>
+                        <div class="xylophone-bar orange" data-sound="xylo-d" data-note="レ">レ</div>
+                        <div class="xylophone-bar yellow" data-sound="xylo-e" data-note="ミ">ミ</div>
+                        <div class="xylophone-bar green" data-sound="xylo-f" data-note="ファ">ファ</div>
+                        <div class="xylophone-bar blue" data-sound="xylo-g" data-note="ソ">ソ</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <nav class="instrument-tabs">
+            <button class="tab-button active" data-instrument="drum">🥁</button>
+            <button class="tab-button" data-instrument="piano">🎹</button>
+            <button class="tab-button" data-instrument="maracas">🎵</button>
+            <button class="tab-button" data-instrument="triangle">🔺</button>
+            <button class="tab-button" data-instrument="xylophone">🎼</button>
+        </nav>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
